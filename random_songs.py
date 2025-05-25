@@ -2,16 +2,14 @@ import random
 import os
 import time
 import re
-from js import document
+import panel as pn
 
 # press plus for a second.third/etc line
 # easy/hard levels - if it is repetitive, if it contains title,
 # point system guessing album vs song vs next lyric
 # timer?
 
-
-import pandas as pd
-from tensorflow.python.lib.io.file_io import file_exists
+pn.extension()
 
 albums = ["TaylorSwift","Fearless_TaylorsVersion_","SpeakNow_TaylorsVersion_","Red_TaylorsVersion_",
           "1989_TaylorsVersion_","Reputation", "Lover", "Folklore", "Evermore", "Midnights",
@@ -111,8 +109,12 @@ def guess():
 
 
 # print(line)
-document.getElementById("lyric").innerText = get_start_lyric()
+lyric = pn.widgets.StaticText(name='Lyric', value=get_start_lyric())
+text_input = pn.widgets.TextInput(name='Text Input', placeholder='Guess here...')
 
+column = pn.Column('# Column', lyric, text_input, styles=dict(background='WhiteSmoke'))
+
+column.servable(target='simple_app')
 # user_input = input("Guess the song: ")
 # # todo- html input?
 # while(is_correct(user_input, correct_song) == False):
