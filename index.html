@@ -12,10 +12,21 @@
     </head>
     <body>
        <h1> Taylor Swift Guessing Game! </h1>
-       <section>
-            <div id="simple_app"></div>
-            <script type="py" src="random_songs.py" config="pyscript.toml"></script>
-        </section>
+<!--       <section>-->
+<!--            <div id="simple_app"></div>-->
+<!--            <script type="py" src="random_songs.py" config="pyscript.toml"></script>-->
+<!--        </section>-->
+        <py-script>
+            import panel as pn
 
+            pn.extension(sizing_mode="stretch_width")
+
+            slider = pn.widgets.FloatSlider(start=0, end=10, name='Amplitude')
+
+            def callback(new):
+                return f'Amplitude is: {new}'
+
+            pn.Row(slider, pn.bind(callback, slider)).servable(target='simple_app')
+        </py-script>
     </body>
 </html>
