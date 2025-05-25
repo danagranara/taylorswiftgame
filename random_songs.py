@@ -98,21 +98,27 @@ def get_start_lyric():
     correct_song_to_guess = get_title(song_dir)
     return line
 
-# def guess():
-#     guess = document.getElementById("input-text").value
-#     res = is_correct(guess, correct_song_to_guess)
-#     if res:
-#         document.getElementById("result").innerText = "Correct!"
-#     else:
-#         document.getElementById("result").innerText = "Wrong!"
+
 
 
 
 # print(line)
 lyric = pn.widgets.StaticText(name='Lyric', value=get_start_lyric())
 text_input = pn.widgets.TextInput(name='Text Input', placeholder='Guess here...')
+submit_button = pn.widgets.Button(name='Submit')
+output_text = pn.pane.Markdown()
 
-column = pn.Column('# Column', lyric, text_input, styles=dict(background='WhiteSmoke'))
+def guess():
+    guess = text_input.value
+    res = is_correct(guess, correct_song_to_guess)
+    if res:
+        output_text.object = "Correct!"
+    else:
+        output_text.object = "Wrong!"
+
+submit_button.on_click(guess)
+
+column = pn.Column('# Column', lyric, text_input, submit_button, styles=dict(background='WhiteSmoke'))
 
 column.servable(target='simple_app')
 # user_input = input("Guess the song: ")
