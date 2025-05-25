@@ -98,13 +98,13 @@ def get_start_lyric():
     correct_song_to_guess = get_title(song_dir)
     return line
 
-def guess():
-    guess = document.getElementById("input-text").value
-    res = is_correct(guess, correct_song_to_guess)
-    if res:
-        document.getElementById("result").innerText = "Correct!"
-    else:
-        document.getElementById("result").innerText = "Wrong!"
+# def guess():
+#     guess = document.getElementById("input-text").value
+#     res = is_correct(guess, correct_song_to_guess)
+#     if res:
+#         document.getElementById("result").innerText = "Correct!"
+#     else:
+#         document.getElementById("result").innerText = "Wrong!"
 
 
 

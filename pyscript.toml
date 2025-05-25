@@ -1,1 +1,1 @@
-packages = ["js", "re", "random", "os" ]
+packages = ["panel", "re", "random", "os" ]
