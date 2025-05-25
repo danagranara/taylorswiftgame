@@ -108,7 +108,7 @@ text_input = pn.widgets.TextInput(name='Text Input', placeholder='Guess here...'
 submit_button = pn.widgets.Button(name='Submit')
 output_text = pn.pane.Markdown()
 
-def guess():
+def guess(event):
     guess = text_input.value
     res = is_correct(guess, correct_song_to_guess)
     if res:
