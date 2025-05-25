@@ -1,5 +1,5 @@
 import random
-import os, os.path
+import os
 import time
 import re
 from js import document

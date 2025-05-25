@@ -11,21 +11,8 @@
         </script>
     </head>
     <body>
-<!--       <h1> Taylor Swift Guessing Game! </h1>-->
-<!--       <h2> Lyric: </h2>-->
-<!--       <p id="lyric"></p>-->
-<!--       <form id="my-form">-->
-<!--           <label for="input-text">Enter Guess:</label>-->
-<!--           <input type="text" id="input-text" name="text-input">-->
-<!--           <input type="submit" value="Submit" id="submit-button" py-click="guess()">-->
-<!--       </form>-->
-<!--       <p id="result"></p>-->
-
-<!--       <script type="mpy"  src="random_songs.py"></script>-->
-<!--        <script type="py" src="random_songs.py"></script>-->
-
-       <h1> Guessing Game! </h1>
-       <h2> Word: </h2>
+       <h1> Taylor Swift Guessing Game! </h1>
+       <h2> Lyric: </h2>
        <p id="lyric"></p>
        <form id="my-form">
            <label for="input-text">Enter Guess:</label>
@@ -34,24 +21,36 @@
        </form>
        <p id="result"></p>
 
-        <py-script>
-            from js import document
+        <script type="py" src="./random_songs.py" config = "./pyscript.toml"></script>
 
-            correct_song_to_guess = "right"
+<!--       <h1> Guessing Game! </h1>-->
+<!--       <h2> Word: </h2>-->
+<!--       <p id="lyric"></p>-->
+<!--       <form id="my-form">-->
+<!--           <label for="input-text">Enter Guess:</label>-->
+<!--           <input type="text" id="input-text" name="text-input">-->
+<!--           <input type="submit" value="Submit" id="submit-button" py-click="guess()">-->
+<!--       </form>-->
+<!--       <p id="result"></p>-->
 
-            def is_correct(guess, correct):
-                return guess == correct
+<!--        <py-script>-->
+<!--            from js import document-->
 
-            def guess():
-                guess = document.getElementById("input-text").value
-                res = is_correct(guess, correct_song_to_guess)
-                if res:
-                    document.getElementById("result").innerText = "Correct!"
-                else:
-                    document.getElementById("result").innerText = "Wrong!"
-                    document.getElementById("lyric").innerText = "hint and hint"
+<!--            correct_song_to_guess = "right"-->
 
-            document.getElementById("lyric").innerText = "hint"
-        </py-script>
+<!--            def is_correct(guess, correct):-->
+<!--                return guess == correct-->
+
+<!--            def guess():-->
+<!--                guess = document.getElementById("input-text").value-->
+<!--                res = is_correct(guess, correct_song_to_guess)-->
+<!--                if res:-->
+<!--                    document.getElementById("result").innerText = "Correct!"-->
+<!--                else:-->
+<!--                    document.getElementById("result").innerText = "Wrong!"-->
+<!--                    document.getElementById("lyric").innerText = "hint and hint"-->
+
+<!--            document.getElementById("lyric").innerText = "hint"-->
+<!--        </py-script>-->
     </body>
 </html>
